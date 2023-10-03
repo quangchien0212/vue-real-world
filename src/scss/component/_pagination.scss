@@ -1,0 +1,33 @@
+@use "../foudation/colors" as *;
+
+.c-pagination {
+  display: flex;
+  list-style: none;
+}
+
+.c-pagination__item {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: $body-color;
+  background-color: $light-color;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: .8;
+
+  &:hover {
+    opacity: 1;
+  }
+  &:not(:first-child) {
+    margin-left: 8px;
+  }
+
+  &.is-active {
+    background-color: $body-color;
+    color: #fff;
+    opacity: 1;
+  }
+}

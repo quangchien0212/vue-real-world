@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
+import useApi from '~/lib/useApi'
 
 type Props = {
   msg?: String
@@ -7,9 +8,18 @@ type Props = {
 defineProps<Props>()
 
 const count = ref(0)
+const { data, loading } = useApi<{articles: Article[]}>({
+  url: '/articles',
+  method: 'get',
+})
+
+watch(data, () => {
+  console.log(data.value && data.value.articles[0])
+})
 </script>
 
 <template>
+  {{ loading }}
   <h1>{{ msg }}</h1>
 
   <div class="card">

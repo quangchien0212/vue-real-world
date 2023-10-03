@@ -1,0 +1,72 @@
+@use "../foudation/colors" as *;
+
+.c-article {
+  padding: 10px;
+  position: relative;
+}
+
+.c-article__author {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.c-article__author-avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  overflow: hidden;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.c-article__author-name {
+  font-size: 13px;
+  line-height: 16px;
+  margin-left: 4px;
+}
+
+.c-article__title {
+  font-size: 20px;
+  font-weight: 700;
+  color: $body-color;
+}
+
+.c-article__description {
+  color: $gray-color;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.c-article__meta {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.c-article__created-at {
+  color: $gray-color;
+  font-size: 13px;
+}
+
+.c-article__meta-dot {
+  color: $gray-color;
+  padding: 0px 6px;
+}
+
+.c-article__tag {
+  color: $gray-color;
+  font-size: 13px;
+  background-color: $light-color;
+  padding: 4px 8px;
+  border-radius: 999px;
+
+  &:not(:first-child) {
+    margin-left: 6px;
+  }
+}
+
+.c-article__link {
+  position: absolute;
+  inset: 0;
+}
